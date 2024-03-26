@@ -1,9 +1,34 @@
+"use client";
+import { FormEvent , useState } from "react";
+
 type Props = {
   value: string;
 };
+type FormData = {
+  email : string,
+  password : string
+}
 
 const Register = ({ value }: Props) => {
-  console.log(value);
+  const [formData, setFormData] = useState<FormData>({
+    email: '',
+    password: ''
+  });
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+    console.log(formData);
+    
+  }
+  
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    // Handle form submission
+    // Send form data to server
+  }
 
   return (
     <>
@@ -14,7 +39,7 @@ const Register = ({ value }: Props) => {
               {value}
             </h2>
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6" onSubmit={onSubmit}>
             <input type="hidden" name="remember" value="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
@@ -27,6 +52,7 @@ const Register = ({ value }: Props) => {
                   type="email"
                   autoComplete="email"
                   required
+                  onChange={handleChange}
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
                 />
@@ -41,6 +67,7 @@ const Register = ({ value }: Props) => {
                   type="password"
                   autoComplete="current-password"
                   required
+                  onChange={handleChange}
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
                 />
