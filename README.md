@@ -4,9 +4,8 @@ A simple program for recording and accomplishing daily tasks. A straightforward 
 
 ## Technologies Used
 
-- React
+- Next Js
 - Tailwind Css
-- Firebase
 - TypeScript
 
 ## Getting Started
