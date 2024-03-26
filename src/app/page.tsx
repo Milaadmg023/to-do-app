@@ -30,7 +30,7 @@ export default function Home() {
         height={600}
       />
       <div className="flex flex-col items-center justify-center gap-2">
-        <Link href={"/login"} className="bg-white text-xl w-[90vw] text-center rounded-lg p-2 mt-5">
+        <Link href={"/register/signup"} className="bg-white text-xl w-[90vw] lg:w-[40vw] text-center rounded-lg p-2 mt-5">
           Get Started
         </Link>
         <Link href={"/login"} className="text-white text-lg">
