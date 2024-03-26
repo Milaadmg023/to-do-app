@@ -33,7 +33,7 @@ export default function Home() {
         <Link href={"/register/signup"} className="bg-white text-xl w-[90vw] lg:w-[40vw] text-center rounded-lg p-2 mt-5">
           Get Started
         </Link>
-        <Link href={"/login"} className="text-white text-lg">
+        <Link href={"/register/login"} className="text-white text-lg">
           Alredy have an account? Login
         </Link>
       </div>
